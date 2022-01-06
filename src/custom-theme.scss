@@ -1,0 +1,32 @@
+/**
+ * Title: custom-theme.scss
+ * Author: Professor Krasso
+ * Date: 19 April 2021
+ * Modified By: Brooklyn Hairston
+ * Description: All css styling for the custom-theme component that is used throughout the whole project
+ */
+
+
+@import '~@angular/material/theming';
+
+@include mat-core();
+// Make sure labels break on smaller screens
+.mat-checkbox-layout { white-space: normal !important; }
+
+$bcrs-primary: mat-palette($mat-green, 500);
+$bcrs-accent: mat-palette($mat-grey, 400);
+
+$bcrs-warn: mat-palette($mat-red);
+
+
+$bcrs-theme: mat-light-theme((
+  color: (
+    primary: $bcrs-primary,
+    accent: $bcrs-accent,
+    warn: $bcrs-warn,
+  )
+));
+
+
+@include angular-material-theme($bcrs-theme);
+

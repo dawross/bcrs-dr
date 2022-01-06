@@ -1,0 +1,19 @@
+ /*
+============================================
+; Title: not-found.component.css
+; Author: Dan Ross
+; Date: 24 April 2021
+; Modified By: Dan Ross
+; Description: This is the not found component CSS file
+;===========================================
+*/
+.not-found-cnt {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+h1 {
+
+	font-size: 50px;
+	margin: 40px 0;
+}

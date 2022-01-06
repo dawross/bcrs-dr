@@ -1,0 +1,13 @@
+/*
+; ==============================
+; Title: user-create.component.css
+; Author: Dan Ross
+; Date: 18 April 2021
+; Modified By: Dan Ross
+; Description: Create User component.css file
+; ==============================
+*/
+.user-create {
+	min-width: 80%;
+	margin: 40px auto;
+}

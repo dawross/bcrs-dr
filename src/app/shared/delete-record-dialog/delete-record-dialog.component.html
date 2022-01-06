@@ -1,0 +1,26 @@
+<!--
+ * Title: delete-record-dialog.component.html
+ * Author: Professor Krasso
+ * Date: 19 April 2021
+ * Modified By: Brooklyn Hairston
+ * Description: hyperlink markup for delete-record-dialog component
+-->
+
+
+<!-- header -->
+<h2 mat-dialog-title>{{ dialogHeader }}</h2>
+<!-- end header -->
+
+<!-- dialog content -->
+<div mat-dialog-content>
+  <p> {{ dialogBody }}</p>
+  <small style="color: red;">WARNING: This cannot be undone.</small>
+</div>
+<!-- end dialog content -->
+
+<!-- dialog actions -->
+<div mat-dialog-actions align="end">
+  <button mat-raised-button matDialogClose="cancel" color="primary">Cancel</button>
+  <button mat-raised-button matDialogClose="confirm" color="accent" cdkFocusInitial>Submit</button>
+</div>
+<!-- end dialog actions -->

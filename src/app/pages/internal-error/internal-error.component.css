@@ -1,0 +1,27 @@
+/**
+ * Title: internal-error.component.css
+ * Author: Professor Krasso
+ * Date: 26 April 2021
+ * Modified By: Juvenal Gonzalez
+ * Description: all css styling for the internal-error component
+ */
+
+img {
+    max-width: 300px;
+    margin: auto;
+    justify-content: center;
+      align-items: center;
+
+}
+
+h1 {
+    font-size: 50px;
+    padding: 50px;
+    text-align: center;
+}
+
+.home {
+    margin: auto;
+    text-align: center;
+    padding: 50px;
+}

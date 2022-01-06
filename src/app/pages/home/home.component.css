@@ -1,0 +1,29 @@
+/**
+ * Title: home.component.css
+ * Author: Professor Krasso
+ * Date: 19 April 2021
+ * Modified By: Juvenal Gonzalez
+ * Description: all css styling for the home  component
+ */
+
+
+.main-welcome {
+    margin-top: 30px;
+  }
+
+  .title {
+    text-align: center;
+
+  }
+  .subtitle {
+    text-align: center;
+    font-size: 14px;
+  }
+  .box {
+    padding: 15px;
+    border: 1px solid;
+    margin: 0 10px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, .5);
+    min-height: 160px;
+  }
+

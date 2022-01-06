@@ -1,0 +1,21 @@
+/*
+============================================
+; Title: contact.component.css
+; Author: Dan Ross
+; Date: 25 April 2021
+; Modified By: Dan Ross
+; Description: This is the contact us CSS file
+;===========================================
+*/
+.align-center
+{
+  text-align: center;
+}
+.contact-cnt {
+  max-width: 900px;
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}

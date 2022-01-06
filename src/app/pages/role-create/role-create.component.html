@@ -1,0 +1,42 @@
+<!-- /*
+============================================
+; Title: role-create.component.html
+; Author: Dan Ross
+; Date: 30 April 2021
+; Modified By: Dan Ross
+; Description: This is the role create HTML file.
+;===========================================
+*/ -->
+
+<br /><br />
+<div fxLayout="column">
+  <!-- Start our create role form -->
+  <mat-card class="mat-elevation-z8" [formGroup]="form" #roleForm>
+    <mat-card-title>Create Role</mat-card-title>
+    <br />
+    <mat-card-content>
+      <div fxLayout="column" fxLayoutGap="10px">
+        <mat-form-field>
+          <input
+            matInput
+            [formControl]="form.controls['text']"
+            placeholder="Role"
+          />
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <br />
+    <mat-card-actions align="end">
+      <button mat-raised-button (click)="cancel()" color="warn">Cancel</button>
+      <button
+        mat-raised-button
+        color="accent"
+        [disabled]="!form.valid"
+        (click)="create()"
+      >
+        Submit
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  <!-- End our create role form -->
+</div>

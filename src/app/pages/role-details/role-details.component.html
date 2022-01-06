@@ -1,0 +1,53 @@
+<!--
+; ==============================
+; Title: role-details.html
+; Author: Professor Krasso
+; Date: 01 May 2021
+; Modified By: Brooklyn Hairston
+; Description: Role details HTML markup
+; ==============================
+-->
+
+<br /><br />
+<!-- fxLayout -->
+
+<!-- role update form -->
+<div fxLayout="column" [formGroup]="form" #roleForm>
+  <mat-card-title>Role Details</mat-card-title>
+  <br />
+
+  <!-- mat card content -->
+  <mat-card-content>
+    <!-- fxLayout -->
+    <div fxLayout="column" fxLayoutGap="10px">
+      <mat-form-field>
+        <input
+          type="text"
+          matInput
+          [formControl]="form.controls['text']"
+          placeholder="Role"
+        />
+      </mat-form-field>
+    </div>
+    <!-- end fxLayout -->
+  </mat-card-content>
+  <!-- end mat card content -->
+
+  <br />
+  <!-- buttons -->
+  <mat-card-actions align="end">
+    <button mat-raised-button (click)="cancel()" color="warn">Cancel</button>
+    <button
+      mat-raised-button
+      color="accent"
+      [disabled]="!form.valid"
+      (click)="save()"
+    >
+      Submit
+    </button>
+  </mat-card-actions>
+  <!-- end buttons -->
+</div>
+<!-- end fxLayout -->
+
+<!-- end role update form -->

@@ -1,0 +1,68 @@
+<!-- /*
+; ==============================
+; Title: invoice-summary-dialog.component.html
+; Author: Professor Krasso
+; Date: 01 May 2021
+; Modified By: Brooklyn Hairston
+; Description: Dialog for the invoice summary HTML
+; ==============================
+*/ -->
+
+<h2 style="text-align: center;" mat-dialog-title>{{ invoice.userName }} please confirm your order</h2>
+
+<!-- mat dialog content -->
+<div mat-dialog-content>
+  <h3>Order date: {{ invoice.orderDate | date }}</h3>
+  <mat-divider></mat-divider>
+
+  <h4>Services</h4>
+  <!-- div for loop -->
+  <div *ngFor="let lineItem of invoice.lineItems">
+
+    <!-- services mat list -->
+    <mat-list>
+      <mat-list-item>
+        {{ lineItem.title }}:
+        <div fxFlex></div>
+        {{ lineItem.price | currency }}
+      </mat-list-item>
+    </mat-list>
+    <!-- end services mat list -->
+  </div>
+  <!-- end div for loop -->
+  <mat-divider></mat-divider>
+
+    <h4>Standard Fees</h4>
+    <!-- labor and fees mat list-->
+    <mat-list>
+      <mat-list-item>
+        Parts:
+        <div fxFlex></div>
+        {{ invoice.partsAmount | currency }}
+      </mat-list-item>
+      <mat-list-item>
+        Labor:
+        <div fxFlex></div>
+        {{ invoice.laborAmount | currency }}
+      </mat-list-item>
+    </mat-list>
+    <!-- end labor and fees mat list -->
+    <br />
+
+    <mat-divider></mat-divider>
+
+    <!-- total -->
+    <p fxLayoutAlign="end">
+      Total charges: {{ invoice.total | currency }}
+    </p>
+    <!-- end total -->
+
+</div>
+<!-- end mat dialog content -->
+
+<!-- mat buttons -->
+<div mat-dialog-actions align="end">
+  <button mat-raised-button matDialogClose="cancel" color="primary">Cancel</button>
+  <button mat-raised-button matDialogClose="confirm" color="accent" cdkFocusInitial>Confirm Order</button>
+</div>
+<!-- end mat buttons -->

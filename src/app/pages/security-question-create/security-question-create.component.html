@@ -1,0 +1,55 @@
+<!--
+ * Title: security-question-create.component.html
+ * Author: Professor Krasso
+ * Date: 19 April 2021
+ * Modified By: Brooklyn Hairston
+ * Description: hyperlink markup for security-question-create component
+-->
+
+<br /><br />
+<!-- fxLayout -->
+<div fxLayout="column">
+  <!-- create security question card -->
+  <!-- create security question form -->
+  <mat-card class="mat-elevation-z8" [formGroup]="form">
+    <mat-card-title>Create Security Question</mat-card-title>
+
+    <br />
+
+    <!-- mat card content -->
+    <mat-card-content>
+      <div fxLayout="column" fxLayoutGap="10px">
+        <!-- question input field -->
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            [formControl]="form.controls['text']"
+            placeholder="Question"
+          />
+        </mat-form-field>
+        <!-- end question input field -->
+      </div>
+    </mat-card-content>
+    <!-- end mat card content-->
+
+    <br />
+    <!-- mat card actions -->
+    <mat-card-actions align="end">
+      <button mat-raised-button (click)="cancel()" color="warn">Cancel</button>
+      <button
+        type="submit"
+        mat-raised-button
+        color="accent"
+        [disabled]="!form.valid"
+        (click)="create()"
+      >
+        Submit
+      </button>
+    </mat-card-actions>
+    <!-- end mat card actions -->
+  </mat-card>
+  <!-- end mat card -->
+  <!-- end create question form -->
+</div>
+<!-- end fxLayout -->

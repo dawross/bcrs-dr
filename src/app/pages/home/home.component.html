@@ -1,0 +1,101 @@
+<!--
+ * Title: home.component.html
+ * Author: Professor Krasso
+ * Date: 19 April 2021
+ * Modified By: Juvenal Gonzalez, Dan Ross
+ * Description: hyperlink markup for home component
+-->
+
+
+<!--
+icon images used
+https://thenounproject.com/term/reset-password/
+
+https://icons8.com/icon/16650/spyware
+
+https://www.flaticon.com/free-icon/ram_543320
+
+https://icons8.com/icon/18262/software-installer
+
+https://www.vecteezy.com/vector-art/2205794-laptop-disk-cleanup-icon
+
+https://thenounproject.com/term/reset-password/3309848/
+
+https://iconscout.com/icon/keyboard-cleaning-2554540
+-->
+
+
+
+<div fxLayout="column" class="main-welcome">
+  <h1 class="title">
+    Welcome to WEB 450's - Bob's Computer Repair Shop <br />
+    <span class="subtitle"> Service Repair Form </span>
+  </h1>
+</div>
+
+<mat-card class="mat-elevation-z0" style="width: 100%; margin: 0 auto">
+  <form
+    #serviceRepairForm="ngForm"
+    (ngSubmit)="submit(serviceRepairForm.value); serviceRepairForm.reset()"
+  >
+    <mat-card-content>
+      <!-- service repair -->
+      <h4>Services</h4>
+      <div fxLayout="row wrap">
+        <!-- Loop over and display our checkboxes -->
+        <div
+          ngModelGroup="checkGroup"
+          *ngFor="let service of services"
+          fxFlex="25"
+          fxFlex.md="33"
+          fxFlex.sm="50"
+          fxFlex.xs="100"
+          fxLayout="column"
+          style="padding: 20px 0"
+        >
+
+
+          <mat-checkbox class="box" name="{{ service.id }}" ngModel>
+            <img src="{{ service.img }}" alt=""><br>
+            {{ service.title }} ({{ service.price | currency }})
+          </mat-checkbox>
+          <br />
+        </div>
+      </div>
+      <br />
+      <br />
+      <mat-divider></mat-divider>
+      <br />
+      <br />
+      <!-- Parts and labor -->
+      <div fxLayout="column">
+        <h4 fxFlex>Standard Fees</h4>
+
+        <mat-form-field fxFlex style="width: 300px !important">
+          <input matInput name="parts" ngModel="0" placeholder="Parts - $0.00" (keypress)="keyPressNumbersDecimal($event)" />
+
+        </mat-form-field>
+
+        <mat-form-field fxFlex style="width: 300px !important">
+          <input
+            matInput
+            name="labor"
+            ngModel="0"
+            placeholder="Labor @ $50.00/hr"
+            (keypress)="keyPressNumbersDecimal($event)"
+          />
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+
+    <!-- Form actions -->
+    <br />
+    <br />
+    <mat-card-actions align="end">
+      <button mat-raised-button type="reset" color="warn">Cancel</button>
+      <button mat-raised-button color="accent">Submit</button>
+    </mat-card-actions>
+    <br>
+    <br>
+  </form>
+</mat-card>

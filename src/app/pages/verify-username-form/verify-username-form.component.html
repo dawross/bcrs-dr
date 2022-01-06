@@ -1,0 +1,60 @@
+<!--
+ * Title: verify-username-form.component.html
+ * Author: Professor Krasso
+ * Date: 26 April 2021
+ * Modified By: Brooklyn Hairston
+ * Description: hyperlink markup for verify-username-form component
+-->
+
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row></mat-toolbar-row>
+  <mat-toolbar-row></mat-toolbar-row>
+  <mat-toolbar-row>
+    <div style="width: 90%">
+      <p style="text-align: center; padding-left: 10%; font-weight: lighter">
+        Bob's Computer Repair Shop
+        <br />
+        <mat-icon>build</mat-icon>
+      </p>
+    </div>
+  </mat-toolbar-row>
+  <mat-toolbar-row></mat-toolbar-row>
+  <mat-toolbar-row></mat-toolbar-row>
+  <mat-toolbar-row></mat-toolbar-row>
+</mat-toolbar>
+
+<br /><br />
+
+<!-- fxLayout -->
+<div fxLayout="row wrap" fxLayoutAlign="center start" style="padding-left: 70px;">
+  <div fxFlex.gt-sm="55" fxFlex="100">
+    <!-- verify user mat card -->
+    <mat-card style="width: 80%;" class="mat-card-top pa-0">
+      <mat-card-title style="text-align: center; font-size: 48px; font-weight: lighter;" class="mat-headline">Verify Username</mat-card-title>
+    <br /><br />
+
+    <!-- username form -->
+
+    <mat-card-content fxLayout="column" [formGroup]="form"  #usernameForm>
+      <small style="color: red;" *ngIf="errorMessage"> {{ errorMessage }}<br /></small>
+      <mat-form-field fxFlex>
+      <input matInput [formControl]="form.controls['username']" placeholder="Username">
+      </mat-form-field>
+
+      <!-- submit button -->
+      <br /><br />
+      <div fxFlex fxLayoutAlign="end">
+        <button mat-raised-button color="accent" routerLink="/" style="margin-right: 20px;">Back</button>
+        <button mat-raised-button color="accent" (click)="validateUsername();" [disabled] ='!form.valid'>Submit</button>
+      </div>
+      <!-- end submit -->
+    </mat-card-content>
+
+    <!-- end username form -->
+
+    </mat-card>
+    <!-- end verify user -->
+  </div>
+</div>
+<!-- end fxLayout -->

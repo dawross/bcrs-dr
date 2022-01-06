@@ -1,0 +1,59 @@
+<!--
+ * Title: role-list.component.html
+ * Author: Professor Krasso
+ * Date: 30 April 2021
+ * Modified By: Juvenal Gonzalez
+ * Description: hyperlink markup for role-list component
+-->
+
+<br /><br />
+<div fxLayout="column">
+  <mat-card
+    ><!--OUTER MAT CARD-->
+    <mat-card-title>Role Configuration</mat-card-title>
+    <mat-card-subtitle>
+      <!--Calls role-create component to generate a new role-->
+      <button mat-button routerLink="/roles/create/new" color="accent">
+        Create
+      </button>
+    </mat-card-subtitle>
+
+    <br />
+    <mat-card-content *ngIf="roles">
+      <!--Only opens if roles are present in the array created in the ts section-->
+      <table mat-table [dataSource]="roles">
+        <!--MAIN TABLE-->
+        <ng-container matColumnDef="role"
+          ><!--ROLE TEXT TO BE DISPLAYED EVERY ITERATION start-->
+          <th mat-header-cell *matHeaderCellDef>Role</th>
+          <!--TITLE-->
+          <td mat-cell *matCellDef="let element">
+            {{ element.text }}
+            <!--text of each object display upon each iteration-->
+          </td>
+        </ng-container>
+        <!--ROLE TEXT TO BE DISPLAYED EVERY ITERATION end-->
+
+        <ng-container matColumnDef="functions">
+          <!--Functions Displayed for every row START-->
+          <th mat-header-cell *matHeaderCellDef>Functions</th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button routerLink="/roles/{{ element._id }}">
+              <mat-icon color="accent">edit</mat-icon>
+              <!--Calls role-details component to edit selected role-->
+            </button>
+            <button mat-icon-button (click)="delete(element._id, element.text)">
+              <mat-icon color="accent">delete</mat-icon>
+              <!--Calls deletedialog component to delete the selected role-->
+            </button>
+          </td>
+        </ng-container>
+        <!--Functions Displayed for every row END-->
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <!--MAINTABLE END-->
+    </mat-card-content> </mat-card
+  ><!--OUTER MAT CARD END-->
+</div>

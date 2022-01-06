@@ -1,0 +1,141 @@
+<!--
+ * Title: signin.component.html
+ * Author: Professor Krasso
+ * Date: 19 April 2021
+ * Modified By: Brooklyn Hairston
+ * Description: hyperlink markup for signin component
+-->
+
+<!-- mat toolbar -->
+<mat-toolbar color="primary">
+  <mat-toolbar-row></mat-toolbar-row>
+  <mat-toolbar-row></mat-toolbar-row>
+
+  <!-- mat toolbar row -->
+  <mat-toolbar-row>
+    <div style="width: 90%">
+      <p style="text-align: center; padding-left: 10%; font-weight: lighter">
+        Bob's Computer Repair Shop
+        <br />
+        <mat-icon>build</mat-icon>
+        <br />
+      </p>
+    </div>
+  </mat-toolbar-row>
+  <br />
+
+  <!-- end mat toolbar row -->
+</mat-toolbar>
+<!-- end mat toolbar -->
+
+<!-- fxLayout -->
+<div fxLayout="row wrap" fxLayoutAlign="center start">
+  <div fxFlex.gt-sm="55" fxFlex="100">
+    <mat-card-title
+      style="
+        text-align: center;
+        font-size: 48px;
+        font-weight: lighter;
+        padding-top: 25px;
+      "
+      class="mat-headLine"
+      >Employee Sign In</mat-card-title
+    >
+    <br />
+    <mat-card-subtitle style="text-align: center; font-weight: lighter">
+      <a routerLink="/session/register" class="register-link"
+        >Create an account</a
+      >
+    </mat-card-subtitle>
+    <br />
+
+    <mat-card-subtitle style="text-align: center" class="mat-headline"
+      >Please enter a valid username and password to proceed</mat-card-subtitle
+    >
+
+    <!-- signin card content -->
+
+    <mat-card-content>
+      <small style="color: red" *ngIf="errorMessage">
+        {{ errorMessage }}<br
+      /></small>
+      <mat-card class="mat-elevation-z8">
+        <!-- signin form -->
+        <form
+          [formGroup]="form"
+          (ngSubmit)="signin(); form.reset()"
+          #loginForm="ngForm"
+        >
+          <mat-card-content fxLayout="column" fxLayoutGap="10px">
+            <!-- username input field-->
+            <mat-form-field>
+              <input
+                type="text"
+                matInput
+                fxFlex
+                [formControl]="form.controls['userName']"
+                placeholder="Username"
+              />
+              <!-- validation messages -->
+              <mat-error
+                *ngIf="
+                  form.controls['userName'].hasError('required') &&
+                  form.controls['userName'].touched
+                "
+              >
+                User Name is a required field
+              </mat-error>
+            </mat-form-field>
+            <!-- end username input field -->
+
+            <!-- password input field -->
+            <mat-form-field>
+              <input
+                type="password"
+                matInput
+                fxFlex
+                [formControl]="form.controls['password']"
+                placeholder="Password"
+              />
+              <!-- validation messages -->
+              <mat-error
+                *ngIf="
+                  form.controls['password'].hasError('required') &&
+                  form.controls['password'].touched
+                "
+              >
+                Password is a required field
+              </mat-error>
+            </mat-form-field>
+            <!-- end password input field -->
+          </mat-card-content>
+
+          <!-- submit button -->
+          <mat-card-actions>
+            <button
+              type="submit"
+              fxFlex
+              mat-raised-button
+              color="accent"
+              [disabled]="!form.valid"
+            >
+              Submit
+            </button>
+          </mat-card-actions>
+          <!-- end submit button -->
+
+          <br />
+          <a
+            fxLayoutAlign="end"
+            class="forgot-password-link"
+            routerLink="/session/forgot"
+            >Forgot Password?</a
+          >
+        </form>
+        <!-- end signin form -->
+      </mat-card>
+    </mat-card-content>
+    <!-- end signin card content -->
+  </div>
+</div>
+<!-- end fxLayout -->

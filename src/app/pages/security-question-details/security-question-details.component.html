@@ -1,0 +1,43 @@
+<!--
+ * Title: security-question-details.component.html
+ * Author: Professor Krasso
+ * Date: 19 April 2021
+ * Modified By: Juvenal Gonzalez
+ * Description: hyperlink markup for security-question-details component
+-->
+
+<br /><br />
+<!--Displayed when an update icon is selected-->
+<div fxLayout="column">
+  <mat-card class="mat-elevation-z8">
+    <mat-card-title>Security Question Details</mat-card-title>
+    <br />
+    <!--Calls upon submit to enter new question into database-->
+    <form [formGroup]="form" (ngSubmit)="saveQuestion()" #questionForm>
+      <mat-card-content>
+        <div fxLayout="column" fxLayoutgap="10px">
+          <mat-form-field>
+            <!--FormControl stores text and is used with setValue in ts code-->
+            <input
+              matInput
+              [formControl]="form.controls['text']"
+              placeholder="Security question text..."
+              (keydown.enter)="saveQuestion()"
+            />
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+
+      <br />
+      <mat-card-actions align="end">
+        <!--Calls cancel to return to questions table-->
+        <button mat-raised-button (click)="cancel()" color="warn">
+          Cancel
+        </button>
+        <button mat-raised-button color="accent" [disabled]="!form.valid">
+          submit
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

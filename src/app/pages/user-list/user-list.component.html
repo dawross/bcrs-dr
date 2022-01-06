@@ -1,0 +1,101 @@
+<!--
+ * Title: user-list.component.html
+ * Author: Professor Krasso
+ * Date: 19 April 2021
+ * Modified By: Brooklyn Hairston
+ * Description: hyperlink markup for user-list component
+-->
+
+<br /><br />
+<!-- fxLayout -->
+<div fxLayout="column">
+
+  <!-- user mat card -->
+  <mat-card>
+    <mat-card-title>Users Configuration</mat-card-title>
+    <!-- create new user button-->
+    <mat-card-subtitle>
+      <button mat-button routerLink="/users/create/new" color="accent">Create</button>
+    </mat-card-subtitle>
+    <!-- end create new user button -->
+
+    <!-- user list -->
+    <mat-card-content *ngIf="users">
+      <mat-table [dataSource]="users">
+
+        <!-- username -->
+        <ng-container matColumnDef="userName">
+        <mat-header-cell *matHeaderCellDef>Username</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{element.userName}}
+        </mat-cell>
+      </ng-container>
+      <!-- end username-->
+
+      <!-- firstName -->
+      <ng-container matColumnDef="firstName">
+        <mat-header-cell *matHeaderCellDef>First Name</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.firstName }}</mat-cell>
+      </ng-container>
+      <!-- end firstName -->
+
+      <!-- lastName -->
+      <ng-container matColumnDef="lastName">
+        <mat-header-cell *matHeaderCellDef>Last Name</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.lastName }}</mat-cell>
+      </ng-container>
+      <!-- end lastName -->
+
+      <!-- phoneNumber -->
+      <ng-container matColumnDef="phoneNumber">
+        <mat-header-cell *matHeaderCellDef>Phone Number</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.phoneNumber }}</mat-cell>
+      </ng-container>
+      <!-- end phoneNumber -->
+
+      <!-- address -->
+      <ng-container matColumnDef="address">
+        <mat-header-cell *matHeaderCellDef>Address</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.address }}</mat-cell>
+      </ng-container>
+      <!-- end address -->
+
+      <!-- email -->
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.email }}</mat-cell>
+      </ng-container>
+      <!-- end email -->
+
+      <!-- functions -->
+      <ng-container matColumnDef="functions">
+        <mat-header-cell *matHeaderCellDef>Functions</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+
+          <!-- edit -->
+          <button mat-icon-button routerLink="/users/{{element._id}}">
+            <mat-icon color="accent">edit</mat-icon>
+          </button>
+          <!-- end edit -->
+
+          <!-- delete -->
+          <button mat-icon-button (click)="delete(element._id, element.userName)">
+            <mat-icon color="accent">delete</mat-icon>
+          </button>
+          <!-- end delete -->
+        </mat-cell>
+      </ng-container>
+      <!-- end functions -->
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+      </mat-table>
+    </mat-card-content>
+    <!-- end user list -->
+
+
+  </mat-card>
+  <!-- end user mat card -->
+</div>
+<!-- end fxLayout -->

@@ -1,0 +1,56 @@
+<!-- /*
+============================================
+; Title: contact.component.html
+; Author: Dan Ross
+; Date: 25 April 2021
+; Modified By: Dan Ross
+; Description: This is the contact us HTML file
+;===========================================
+*/ -->
+<!-- We're using Angular Flex Layouts -->
+<!-- Start our main container here.  -->
+<h1 class="align-center">Contact Us</h1>
+<div fxLayout="row wrap" class="contact-cnt">
+
+  <!-- Start our address card here.  -->
+  <div fxFlex>
+    <mat-card class="mat-elevation-z0">
+      <mat-card-title class="card-title-icon align-center">
+        <mat-icon color="primary" style="width: 67px">navigation</mat-icon>
+      </mat-card-title>
+      <br />
+      <mat-card-content class="align-center">
+        <p>100 Central Street</p>
+        <p>Some City, CA</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!-- End our address card here.  -->
+  <!-- Start our phone card here.  -->
+  <div fxFlex>
+    <mat-card class="mat-elevation-z0">
+      <mat-card-title class="card-title-icon align-center">
+        <mat-icon color="primary" style="width: 67px" >phone</mat-icon>
+      </mat-card-title>
+      <br />
+      <mat-card-content class="align-center">
+        <p>Direct: 515-555-5555</p>
+        <p>Toll-free: 1-888-555-5555</p>
+        <p>Fax: 555-555-5555</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!-- End our phone card here.  -->
+</div>
+<!-- End our main container here.  -->
+<br />
+<br />
+<br />
+<br />
+<!-- Start our footer here -->
+<div fxLayout="column">
+  <p style="text-align: center">
+    Visit us online or at our location in downtown Some City
+  </p>
+</div>
+<!-- End our footer here -->
