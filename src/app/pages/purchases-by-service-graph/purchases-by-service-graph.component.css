@@ -5,3 +5,7 @@
  * Modified By: Juvenal Gonzalez
  * Description: all css styling for the purchases-by-service-graph component
  */
+h1 {
+  margin: 20px 0;
+  text-align: center;
+}

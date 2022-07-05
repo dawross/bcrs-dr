@@ -44,7 +44,7 @@ app.use('/', express.static(path.join(__dirname, '../dist/bcrs')));
  const port = process.env.PORT || 3000;// server port
 
 // This line will need to be replaced with your actual database connection string
-const conn = 'mongodb+srv://bcrs_user:admin@buwebdev-cluster-1.saboe.mongodb.net/bcrs';
+const conn = 'mongodb+srv://bcrs_dr_user:6553rush@buwebdev-cluster-1.cnaxx.mongodb.net/bcrs-dr?retryWrites=true&w=majority';
 
 /**
  * Database connection

@@ -13,7 +13,7 @@
 // Make sure labels break on smaller screens
 .mat-checkbox-layout { white-space: normal !important; }
 
-$bcrs-primary: mat-palette($mat-green, 500);
+$bcrs-primary: mat-palette($mat-blue, 500);
 $bcrs-accent: mat-palette($mat-grey, 400);
 
 $bcrs-warn: mat-palette($mat-red);
